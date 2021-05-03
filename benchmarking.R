@@ -39,8 +39,8 @@ bench
 
 # save results
 save_name <- paste0(
-  "bechmark_",
-  str_extract(Sys.info()["nodename"], ".+?(?=\\.)"),
+  "benchmark_",
+  strsplit(Sys.info()["nodename"], ".", fixed = TRUE)[[1]][1],
   "_",
   gsub("-", "", Sys.Date()),
   ".rds")
